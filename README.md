@@ -4,10 +4,10 @@
 
 # GIT Instructions Used:
 
-# whoami
-# pwd 
-# ls -l 
-# ls -F 
+### whoami
+### pwd 
+### ls -l 
+### ls -F 
 # git config --global user.name "Test Git"
 # git config user.email "xxx@xxx.com"
 # git init 
