@@ -1,0 +1,40 @@
+﻿@page
+@model UnitTest.Pages.TasksModel
+@{
+     ViewData["Title"] = "Tasks page";
+}
+<div class="text-center">
+    <h1 class="display-4">List of tasks - Fetching Data from Backend</h1>
+   
+</div>
+
+Implementation Done :
+API client is connected with front end.
+The API is connected with the Database.
+Unit Test is done for the project by attaching the controller with Test Project Code
+<div style="color: #D8000C; background-color: #FFBABA">
+  @Model.ErrorMessage
+</div> 
+
+<table class="table">
+   <thead>
+      <tr>
+         <th>Task Name</th>
+       @*<th>Hours Needed</th>*@
+         <th>Description</th>
+         <th>Status</th>
+      </tr>
+   </thead>
+   <tbody>
+      @foreach (var Task in @Model.Tasks)
+      {
+         <tr>
+            <td>@Task.TaskName</td>
+        @*  <td>@Task.HoursNeeded</td>*@
+            <td>@Task.Description</td>
+            <td>@Task.Status</td>
+         </tr>
+      }
+   </tbody>
+</table>
+

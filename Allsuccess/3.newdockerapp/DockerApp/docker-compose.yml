@@ -1,0 +1,20 @@
+services: 
+
+  DockerApp:
+    image: dockerapp
+    build:
+      context: DockerApp
+      dockerfile: Dockerfile
+    environment: 
+      - backendUrl=http://DockerAPI
+    ports:
+      - "5000:80"
+    depends_on: 
+      - DockerAPI
+  DockerAPI:
+    image: dockerapi
+    build: 
+      context: DockerAPI
+      dockerfile: Dockerfile
+    ports: 
+      - "5003:80"

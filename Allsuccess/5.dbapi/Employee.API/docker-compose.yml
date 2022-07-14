@@ -1,0 +1,22 @@
+version: '3.8'
+services: 
+    codewithgj:
+        image: mcr.microsoft.com/mssql/server:2019-latest
+        environment: 
+            ACCEPT_EULA: "Y"
+            SA_PASSWORD: "Strong(!)Password"
+            MSSQL_PID: Express
+        ports: 
+            - "1433:1433"
+    employeeapi:
+        build: .
+        depends_on: 
+            - codewithgj
+        environment: 
+            ServerName: "codewithgj"
+            Database: "Employee"
+            UserName: "SA"
+            Password: "Strong(!)Password"
+        ports: 
+            - "8000:80"
+        
